@@ -8,12 +8,14 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet} from 'react-native';
 import Navigation from './src/naviagator/navigator';
+import {store} from './src/app/store';
+import {Provider} from 'react-redux';
 
 function App(): JSX.Element {
   return (
-    <SafeAreaView style={styles.Container}>
+    <Provider store={store}>
       <Navigation />
-    </SafeAreaView>
+    </Provider>
   );
 }
 
@@ -21,18 +23,6 @@ const styles = StyleSheet.create({
   Container: {
     flex: 1,
     backgroundColor: '#FFF',
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
   },
 });
 
